@@ -66,3 +66,8 @@ Route::get('{nama}/{bb}/{tb}', function($nama, $bb, $tb){
     . "bmi : $bmi <br>"
     . "keterangan : $ket ";
 });
+
+// route opotional parameter
+Route::get('myname/{nama?', function($a = "radin"){
+    return "my name is $a";
+});
