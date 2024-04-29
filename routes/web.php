@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
+use App\Models\Barang;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,4 +72,14 @@ Route::get('{nama}/{bb}/{tb}', function($nama, $bb, $tb){
 // route opotional parameter
 Route::get('myname/{nama?', function($a = "radin"){
     return "my name is $a";
+});
+
+Route::get('/post', function () {
+    $data = Post::all();
+    return $data;
+});
+
+Route::get('/barang', function () {
+    $data = Barang::all();
+    return $data;
 });
