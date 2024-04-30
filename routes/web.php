@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Barang;
+use App\Models\Siswa;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -75,11 +77,42 @@ Route::get('myname/{nama?', function($a = "radin"){
 });
 
 Route::get('/post', function () {
-    $data = Post::all();
-    return $data;
+    $post = Post::all();
+
+    // $post = Post::find(4);
+
+    // $post = new Post;
+    // $post->title = "cara menjadi jadian";
+    // $post->content = "temabak";
+    // $post->save();
+
+    return view('tampil_post', compact('post'));
 });
 
 Route::get('/barang', function () {
-    $data = Barang::all();
-    return $data;
+    $barang = Barang::all();
+    // return $barang;
+    
+    return view('tampil_barang', compact('barang'));
+
+});
+
+Route::get('/siswa', function () {
+    $siswa = Siswa::all();
+
+    // $siswa = Siswa::where('jenis_kelamin', 'like', '%perempuan%')->get();
+
+    // $siswa = new Siswa;
+    // $siswa->nama = "tora";
+    // $siswa->jenis_kelamin = "laki-laki";
+    // $siswa->alamat = "Bandung";
+    // $siswa->agama = "islam";
+    // $siswa->telepon = 88898701;
+    // $siswa->email = "tono@gmail.com";
+    // $siswa->save();
+
+    // return $siswa;
+
+    return view('tampil_siswa', compact('siswa'));
+
 });
