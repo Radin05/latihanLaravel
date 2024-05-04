@@ -12,18 +12,16 @@
                 <tr>
                     <th>No</th>
                     <th>ID</th>
-                    <th>Nama</th>
-                    <th>Harga</th>
-                    <th>Stok</th>
+                    <th>Nama Pembeli</th>
+                    <th>Jenis Kelamin</th>
                 </tr>
             @php $no = 1; @endphp
-            @foreach ($barang as $data)
+            @foreach ($pembeli as $data)
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $data-> id}}</td>
-                    <td>{{ $data-> nama}}</td>
-                    <td>{{ $data-> harga}}</td>
-                    <td>{{ $data-> stok}}</td>
+                    <td>{{ $data-> nama_pendek}}</td>
+                    <td>{{ $data-> jenis_kelamin}}</td>
                 </tr>
             @endforeach
         </table>

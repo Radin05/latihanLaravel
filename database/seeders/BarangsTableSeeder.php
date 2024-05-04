@@ -15,9 +15,9 @@ class BarangsTableSeeder extends Seeder
     public function run()
     {
         $barangs = [
-            ['nama' => 'kursi', 'jumlah' => 100],
-            ['nama' => 'kemeja', 'jumlah' => 111],
-            ['nama' => 'meja', 'jumlah' => 200],
+            ['nama' => 'ciki', 'harga' => 1000, 'stok' => 50],
+            ['nama' => 'permen', 'harga' => 500, 'stok' => 50],
+            ['nama' => 'coklat', 'harga' => 7000, 'stok' => 50],
         ];
 
         // masukan data ke database

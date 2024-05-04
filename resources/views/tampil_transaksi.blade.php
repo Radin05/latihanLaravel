@@ -8,22 +8,25 @@
 </head>
 <body>
     <center>
-        <table border="10">
+        <table border="2">
                 <tr>
                     <th>No</th>
                     <th>ID</th>
-                    <th>Nama</th>
-                    <th>Harga</th>
-                    <th>Stok</th>
-                </tr>
+                    <th>Nama Barang</th>
+                    <th>Nama Pembeli</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Jumlah</th>
+                    <th>Tanggal</th>
             @php $no = 1; @endphp
-            @foreach ($barang as $data)
+            @foreach ($transaksi as $data)
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $data-> id}}</td>
-                    <td>{{ $data-> nama}}</td>
-                    <td>{{ $data-> harga}}</td>
-                    <td>{{ $data-> stok}}</td>
+                    <td>{{ $data-> barang->nama}}</td>
+                    <td>{{ $data-> pembeli->nama_pendek}}</td>
+                    <td>{{ $data-> pembeli->jenis_kelamin}}</td>
+                    <td>{{ $data-> jumlah}}</td>
+                    <td>{{ $data-> tanggal}}</td>
                 </tr>
             @endforeach
         </table>

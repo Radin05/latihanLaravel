@@ -4,6 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Barang;
 use App\Models\Siswa;
+use App\Models\pengguna;
+use App\Models\Telepon;
+use App\Models\merek;
+use App\Models\produk;
+use App\Models\pembeli;
+use App\Models\transaksi;
 
 
 /*
@@ -89,14 +95,6 @@ Route::get('/post', function () {
     return view('tampil_post', compact('post'));
 });
 
-Route::get('/barang', function () {
-    $barang = Barang::all();
-    // return $barang;
-    
-    return view('tampil_barang', compact('barang'));
-
-});
-
 Route::get('/siswa', function () {
     $siswa = Siswa::all();
 
@@ -116,3 +114,60 @@ Route::get('/siswa', function () {
     return view('tampil_siswa', compact('siswa'));
 
 });
+
+Route::get('/pengguna', function () {
+    $pengguna = pengguna::all();
+    // return $pengguna;
+    
+    return view('tampil_pengguna', compact('pengguna'));
+
+});
+
+Route::get('/telepon', function () {
+    $telepon = Telepon::all();
+    // return $telepon;
+
+    return view('tampil_telepon', compact('telepon'));
+
+});
+
+Route::get('/merek', function () {
+    $merek = merek::all();
+    // return $merek;
+
+    return view('tampil_merek', compact('merek'));
+
+});
+
+Route::get('/produk', function () {
+    $produk = produk::all();
+    // return $produk;
+
+    return view('tampil_produk', compact('produk'));
+
+});
+
+Route::get('/pembelii', function () {
+    $pembeli = pembeli::all();
+    // return $pembeli;
+
+    return view('tampil_pembeli', compact('pembeli'));
+
+});
+
+Route::get('/barang', function () {
+    $barang = Barang::all();
+    // return $barang;
+
+    return view('tampil_barang', compact('barang'));
+
+});
+
+Route::get('/transaksi', function () {
+    $transaksi = transaksi::all();
+    // return $transaksi;
+
+    return view('tampil_transaksi', compact('transaksi'));
+
+});
+
