@@ -10,6 +10,9 @@ use App\Models\merek;
 use App\Models\produk;
 use App\Models\pembeli;
 use App\Models\transaksi;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\MerekController;
 
 
 /*
@@ -122,6 +125,11 @@ Route::get('/pengguna', function () {
     return view('tampil_pengguna', compact('pengguna'));
 
 });
+Route::get('/', function () {
+    
+    return view('welcome');
+
+});
 
 Route::get('/telepon', function () {
     $telepon = Telepon::all();
@@ -140,7 +148,7 @@ Route::get('/merek', function () {
 });
 
 Route::get('/produk', function () {
-    $produk = produk::all();
+    $produk = Produk::all();
     // return $produk;
 
     return view('tampil_produk', compact('produk'));
@@ -171,3 +179,12 @@ Route::get('/transaksi', function () {
 
 });
 
+// with controller
+Route::get('template_post', [PostController::class,'menampilkan']);
+Route::get('template_post/{id}', [PostController::class,'show']);
+
+Route::get('template_produk', [ProdukController::class,'menampilkan']);
+Route::get('template_produk/{id}', [ProdukController::class,'show']);
+
+Route::get('template_merek', [MerekController::class,'menampilkan']);
+Route::get('template_merek/{id}', [MerekController::class,'show']);
