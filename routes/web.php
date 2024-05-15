@@ -188,3 +188,10 @@ Route::get('template_produk/{id}', [ProdukController::class,'show']);
 
 Route::get('template_merek', [MerekController::class,'menampilkan']);
 Route::get('template_merek/{id}', [MerekController::class,'show']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// with CRUD
+use App\Http\Controllers\BrandController;
+Route::resource('brand', BrandController::class);
