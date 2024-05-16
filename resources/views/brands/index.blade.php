@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row justify-content-center m-5">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Data Brand</div>
 
@@ -23,11 +23,15 @@
                         <tr>
                             <th scope="row">{{ $no++ }}</th>
                             <td>{{ $data->name_brand }}</td>
+                            <form action="{{route('brand.destroy', $data->id)}}" id="delete-data" method="post">
+                                    @csrf
+                                    @method('DELETE')
                             <td>
-                                <a class="btn btn-success">Edit</a>
+                                <a href="{{route('brand.edit', $data->id)}}" class="btn btn-success">Edit</a>
                                 <a href="{{route('brand.show', $data->id)}}" class="btn btn-warning">Show</a>
-                                <a class="btn btn-danger">Delete</a>
+                                <button type="submit" class="btn btn-danger">Delete</button>
                             </td>
+                            </form>
                         </tr>
                     </tbody>
                     @endforeach

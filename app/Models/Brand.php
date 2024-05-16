@@ -13,9 +13,9 @@ class Brand extends Model
     // protected $table = ['penggunas'];
     public $timestamps = true;
 
-    // relasi ke tabel telepon
-    // public function Product()
-    // {
-    //     return $this->hasMany(Product::class);
-    // }
+    // relasi ke tabel product
+    public function Product()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

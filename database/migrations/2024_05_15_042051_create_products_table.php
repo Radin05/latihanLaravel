@@ -15,7 +15,14 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('name_product');
+            $table->integer('price');
+            $table->string('description');
+            $table->unsignedBigInteger('id_brand');
+            $table->string('cover');
             $table->timestamps();
+
+            $table->foreign('id_brand')->references('id')->on('brands')->onDelete('cascade');
         });
     }
 

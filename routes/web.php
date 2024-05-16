@@ -56,29 +56,29 @@ Route::get('/fruit', function(){
 });
 
 // route parameter
-Route::get('product/{name}', function($name){
-    return "pruduk: $name";
-}); 
+// Route::get('product/{name}', function($name){
+//     return "produk: $name";
+// }); 
 
 // latihan
-Route::get('{nama}/{bb}/{tb}', function($nama, $bb, $tb){
-    $bmi = $bb / (($tb/100)**2);
-    if ($bmi > 30) {
-        $ket = "obesitas";
-    }elseif ($bmi > 25) {
-        $ket = "kelebihan";
-    }elseif ($bmi > 18.5) {
-        $ket = "pas";
-    }elseif ($bmi < 18.5) {
-        $ket = "kurang";
-    }
+// Route::get('{nama}/{bb}/{tb}', function($nama, $bb, $tb){
+//     $bmi = $bb / (($tb/100)**2);
+//     if ($bmi > 30) {
+//         $ket = "obesitas";
+//     }elseif ($bmi > 25) {
+//         $ket = "kelebihan";
+//     }elseif ($bmi > 18.5) {
+//         $ket = "pas";
+//     }elseif ($bmi < 18.5) {
+//         $ket = "kurang";
+//     }
 
-    return "nama : $nama <br>"
-    . "bb : $bb <br>"
-    . "tb : $tb <br>"
-    . "bmi : $bmi <br>"
-    . "keterangan : $ket ";
-});
+//     return "nama : $nama <br>"
+//     . "bb : $bb <br>"
+//     . "tb : $tb <br>"
+//     . "bmi : $bmi <br>"
+//     . "keterangan : $ket ";
+// });
 
 // route opotional parameter
 Route::get('myname/{nama?', function($a = "radin"){
@@ -195,3 +195,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // with CRUD
 use App\Http\Controllers\BrandController;
 Route::resource('brand', BrandController::class);
+
+use App\Http\Controllers\ProductController;
+Route::resource('product', ProductController::class);
